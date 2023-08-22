@@ -1,0 +1,3 @@
+models --> sql --> datbase creation
+
+python ->make migrations -> sql -> migrate ->create database
