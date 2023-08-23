@@ -4,7 +4,7 @@ from django.http import HttpResponse
 # Create your views here.
 
 def home(request):
-    return HttpResponse('home')#value should a string
+    return HttpResponse('home') #value should a string
 
 def about(request):
     return HttpResponse('about')
