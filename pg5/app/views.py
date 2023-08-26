@@ -38,7 +38,3 @@ def contact(request):
     }
 
     return render(request,'contact.html',context)
-'''
-root -> 3 
-root -> 1 -> 4
-'''
