@@ -22,7 +22,6 @@ def home(request):
     context = {
         'all_tasks':tasks
     }
-
     return render(request,'home.html',context)
 
 
