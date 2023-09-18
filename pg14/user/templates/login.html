@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% comment %} {% block footer %}This is my login footer{% endblock footer %} {% endcomment %}
+
+{% block body %}
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-10">Welcome to Login page</div>
+
+        <form action='{% url "login-page" %}' method="POST">
+          {% csrf_token %}
+
+          {% for form in form %}
+            <p>
+              {{form.label_tag}} {{form}} {{form.errors}}
+            </p>
+          
+          {% endfor %}
+
+          <input type="submit" value="login">
+        </form>
+      </div>
+    </div>
+
+{% endblock body %}
+
+

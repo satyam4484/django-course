@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+
+{% block body %}
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-10">Welcome to Sign up page</div>
+
+        <form action='{% url "signup-page" %}' method="POST">
+          {% csrf_token %}
+
+          {% for form in form %}
+            <p>
+              {{form.label_tag}} {{form}} {{form.errors}}
+            </p>
+          
+          {% endfor %}
+
+          <input type="submit" value="Create">
+        </form>
+      </div>
+    </div>
+    
+{% endblock body %}
