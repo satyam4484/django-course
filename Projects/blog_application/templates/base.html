@@ -1,0 +1,30 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+
+      
+      {% block title %}
+        Blog
+      {% endblock title %}
+
+
+    </title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-icons.css' %}">
+  </head>
+  <body>
+
+    {% comment %} nav {% endcomment %}
+    {% include 'navbar.html' %}
+    {% comment %} error messages {% endcomment %}
+
+    {% comment %} body {% endcomment %}
+
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+    <script src="{% static 'js/font.js' %}"></script>
+  </body>
+</html>
