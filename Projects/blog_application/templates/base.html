@@ -1,28 +1,32 @@
 {% load static %}
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>
-
-      
       {% block title %}
         Blog
-      {% endblock title %}
-
-
+      {% endblock %}
     </title>
-    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
-    <link rel="stylesheet" href="{% static 'css/bootstrap-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap-icons.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" />
   </head>
+
   <body>
-
-    {% comment %} nav {% endcomment %}
+    {% comment %}nav{% endcomment %}
     {% include 'navbar.html' %}
-    {% comment %} error messages {% endcomment %}
 
-    {% comment %} body {% endcomment %}
+    {% comment %}error messages{% endcomment %}
+
+    {% comment %}body{% endcomment %}
+    <div class="container">
+      <div class="row justify-content-evenly my-5 my-md-2">
+        {% block content %}
+
+        {% endblock %}
+      </div>
+    </div>
 
     <script src="{% static 'js/bootstrap.js' %}"></script>
     <script src="{% static 'js/font.js' %}"></script>

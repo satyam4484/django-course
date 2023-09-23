@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block title %}
+  Sign up Page
+{% endblock %}
+
+{% block content %}
+  <div class="col-md-12 my-2">
+    <h2 class="text-center my-md-3 mb-md-5">SignupForm</h2>
+    <form action='{% url "sign-up" %}' method="POST" enctype="multipart/form-data">
+
+        
+      <div class="row justify-content-center">
+        {% csrf_token %}
+
+        <div class="col-md-5">
+          {% for form in userForm %}
+            <p>{{ form.label_tag }} {{ form }} {{ form.errors }}</p>
+          {% endfor %}
+        </div>
+
+        <div class="col-md-5">{{ profileForm.as_p }}</div>
+
+        <div class="col-md-3">
+            <input type="submit" value="Create Account" class="btn btn-outline-info" />
+        </div>
+      </div>
+
+    </form>
+  </div>
+  {% comment %} <div class="col-md-5 mt-5 mt-sm-2">
+    <form class="signup-form border-rounder" enctype="multipart/form-data">
+      <h2>Sign Up</h2>
+      <div class="form-group">
+        <label for="exampleInputEmail1" class="form-label mt-4">Email address</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1" class="form-label mt-4">Email address</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" />
+      </div>
+      <div class="form-group">
+        <label for="formFile" class="form-label mt-4">Default file input example</label>
+        <input class="form-control" type="file" id="formFile" />
+      </div>
+      <button type="submit" class="btn btn-primary btn-block my-1">Sign Up</button>
+    </form>
+  </div> {% endcomment %}
+{% endblock %}

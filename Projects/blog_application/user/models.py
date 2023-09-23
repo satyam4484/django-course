@@ -12,6 +12,6 @@ class UserProfile(models.Model):  #  1 -- 1
     profile_pic = models.ImageField(upload_to='profile/')
 
     def __str__(self):
-        return self.user
+        return self.user.first_name
 
 
